@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>易水禾家政服务管理系统</title>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="{{ static_url("css/style.css") }}">
+    <!-- enable HTML5 elements in IE7+8 -->
+    <!-- [if it IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="{{ static_url("js/jquery.js") }}"></script>
 </head>
+
 <body>
 <header>
     {% block header %}

@@ -42,3 +42,32 @@ function loginto(){
     }
     
 }
+
+
+$(document).ready(function(){
+    $("#login").click(function(){
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        var reg = /^([\u4E00-\u9FA5A-Za-z0-g])+$/;    //只允许汉字、字母和数字
+        check_username=reg.test(username);
+        check_password=reg.test(password);
+        if (!check_username || !check_password){
+            getstyle(".error").display="inline";
+            document.getElementById("error").innerHTML="用户名、密码错误。请确认后登录。";
+        }
+        else{
+            $.post("/login",{username:username,password:password},function(data){
+                if (data=="0") {
+                    $(".error").text("用户名或密码错误。").css("display","inline");
+                    }
+                else if (data=="1") { 
+                    alert("zongguanliyuan");
+                    }
+                else {
+                    alert("qieyhuiyuan");
+                    }
+                });
+        }
+        
+    })
+})

@@ -1,18 +1,19 @@
 #coding:utf-8
 
 import tornado.ioloop
+import tornado.options
+import tornado.httpserver
 import sys
 
 from application import application
 
-port="8888"
+from tornado.options import define,options
+define("port",default=8888,help="run on th given port",type=int)
 
 if __name__=="__main__":
-    if len(sys.argv) > 1:
-        port=sys.argv[1]
-
-    application.listen(port)
-    print 'Development server is running at http://127.0.0.1:%s/' % port
+    tornado.options.parse_command_line()
+    http_server = tornado.httpserver.HTTPServer(application)
+    http_server.listen(options.port)
+    print 'Development server is running at http://127.0.0.1:%s/' % options.port
     print 'Quit the server with Control-C'
-
     tornado.ioloop.IOLoop.instance().start()

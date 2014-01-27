@@ -1,9 +1,9 @@
 #coding:utf-8
 
 from handler.index import MainHandler
-from handler.index2 import MainHandler2
+from handler.index import LoginHandler
 
 url=[
-    (r'/',MainHandler),
-    (r'/2',MainHandler2),
+    (r'/', MainHandler),
+    (r'/login', LoginHandler),
     ]
