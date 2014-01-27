@@ -1,0 +1,9 @@
+.word{
+    color:yellow;
+}
+
+.error{
+    font: bold 1.4em;
+    color: red;
+    display: none;
+    }

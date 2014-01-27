@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>易水禾家政服务管理系统</title>
+    <link rel="stylesheet" href="{{ static_url("css/style.css") }}">
+</head>
+<body>
+<header>
+    {% block header %}
+        <p><img src="/static/img/logojz.png">logo</p>
+        <p>there is the column</p>
+    {% end %}
+</header>
+<content>
+    {% block body %}
+    {% end %}
+</content>
+<footer>
+    {% block footer %}
+        <hr>
+        <p>copyright@<a href="www.itdiffer.com">苏州易水禾软件有限公司</a></p>
+    {% end %}
+</footer>
+</body>
+</html>
