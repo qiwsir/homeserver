@@ -14,4 +14,4 @@ class LoginHandler(tornado.web.RequestHandler):
     def post(self):
         username = self.get_argument("username")
         password = self.get_argument("password")
-        self.write("hello")
+        self.write(username)
